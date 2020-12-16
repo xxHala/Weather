@@ -1,0 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
+
+.card {
+    margin: 0 auto;
+    margin-top: 5%;
+    padding: 5px 30px;
+    width: 364px;
+    background: #fbfbfb;
+    height: 163px;
+    border-radius: 37px;
+    box-shadow: 5px 8px 18px #d8d8dc;
+    -webkit-animation: open 2s cubic-bezier(.39, 0, .38, 1);
+}
+.weather-icon {
+width: 50%;height: 50%;top: -84px;left: 161px;position: relative;}
+
+span.temp {
+color: #303a52;
+    font-weight: 700px;
+    line-height: 112px;
+    /* margin: .0 0 0 -18px; */
+    /* padding: 0 12px 0 16px; */
+    font-family: 'Space Grotesk', sans-serif;
+        font-stretch: ultra-condensed;
+
+    font-size: 69px;
+}
+.location {
+    font-family: 'Noto Sans JP', sans-serif;
+    padding: 0px 16px 0px;
+    color:#a2a0a0;
+    margin: -17px -3px;
+}
+body {
+    /* color: red; */
+}
+
+html {
+    background: darkseagreen;
+}
