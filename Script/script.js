@@ -5,20 +5,18 @@ window.addEventListener('DOMContentLoaded', (event) => {
   const dateMap = new Map();
   const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
   const dayName = days[new Date().getDay()];
+
   /**
-         * fetch data from openweathermap API
-         * @param {*} void
-         * @returns {*} data from api
-        */
+ * fetch data from openweathermap API
+ * @param {*} void
+ * @returns {*} data from api
+ */
   function weatherfetch() {
-    fetch(`https://api.openweathermap.org/data/2.5/forecast?q=amman&appid=aa73d3feb388d4f8c2e2bd8ce49977ab&units=metric
-`).then((resp) => resp.json())
-      .then((data) => {
-        console.log(data);
-        dataWeather(data);
-      });
+    fetch('https://api.openweathermap.org/data/2.5/forecast?q=amman&appid=aa73d3feb388d4f8c2e2bd8ce49977ab&units=metric')
+      .then((resp) => resp.json())
+      .then((data) => dataWeather(data));
   }
-  weatherfetch();
+
   /**
    * flitering  data given from API
    * @param {*} data
@@ -32,16 +30,16 @@ window.addEventListener('DOMContentLoaded', (event) => {
       dateMap.set(`Day${i + 1}`, allDay);
     }
     weatherDraw();
-    console.log(dateMap);
+    // console.log(dateMap);
     return allDay;
   }
-/**data for 1week weather
- * 
- * 
+  /** data for 1week weather
+ *
+ *
  */
   function oneWeek(data) {
     let oneWeek = '';
-  oneWeek = `<div class=card>  
+    oneWeek = `<div class=card>  
     <span class=firstcard> ${Math.floor(value[0].main.temp)}&deg </span>
       <span> <img class="city-icon" src="http://openweathermap.org/img/w/${value[0].weather[0].icon}.png">
       </span>     </div>
@@ -60,15 +58,14 @@ window.addEventListener('DOMContentLoaded', (event) => {
 
   function draw(value) {
     let markup = '';
-  
-    
-    for (let i = 0; i < value.length-1; i++) {
-      const listIconUrl = `http://openweathermap.org/img/w/${value[0].weather[0].icon}.png`;
-      markup += `<div class=card> ${Math.floor(value[0].main.temp)}&deg
-      <span> <img class="city-icon" src="${listIconUrl}">
-          </div>`;
+    for (let i = 0; i < value.length; i++) {
+      const listIconUrl = `http://openweathermap.org/img/w/${value[i].weather[0].icon}.png`;
+      markup += `<div class=card>
+                  <span>${Math.floor(value[i].main.temp)}&deg</span>  
+                  <span><img class="city-icon" src="${listIconUrl}"></span>
+                </div>`;
     }
-    
+
     return markup;
   }
 
@@ -78,6 +75,8 @@ window.addEventListener('DOMContentLoaded', (event) => {
     weatherDiv.className = 'weather';
     document.body.appendChild(weatherDiv);
   }
+
+  weatherfetch();
 });
 
 /*
