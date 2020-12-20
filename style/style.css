@@ -1,33 +1,32 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&display=swap');
 
-
 .firstcard{
-font-size: 15px;
- display: flex;
+    font-size: 15px;
+    display: flex;
     flex-direction: row;
-
 }
-.card{
+
+.card {
     align-items: center;
     display: flex;
-    margin-top: -38px;
     justify-content: space-between;
-    font-size: 58px;
+    font-size: 18px;
     font-family: 'Space Grotesk';
+    flex-direction: column;
 }
-.weather{
-     display: flex;
-     padding: 15px 12px;
-     flex-direction: row;
-     justify-content: space-between;
-     background-color: #f5ebeb;
-     overflow-x: hidden;
-     width: 275px;
-     height: 117px;
-     transition: 0.3s;
-     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-     margin:  0 auto;
-     /* margin-top: 28px; */
-     border-radius: 12px;
+
+.weather {
+    display: flex;
+    padding: 15px 12px;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #f5ebeb;
+    overflow-x: hidden;
+    transition: 0.3s;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    margin:  0 auto;
+    margin-bottom: 40px;
+    border-radius: 12px;
+    max-width: 400px;
 }
